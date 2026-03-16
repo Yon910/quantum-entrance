@@ -117,6 +117,21 @@ window.resetTimer = function(){
 
 }
 
+//勉強記録
+window.recordStudy = function(){
+
+  let timerText = document.getElementById("timer").innerText;
+
+  let subject = document.getElementById("subject").value;
+
+  let today = new Date().toLocaleDateString();
+
+  console.log(today + " " + subject + " " + timerText);
+
+  alert("記録しました！");
+
+}
+
 //グラフ表示
 const ctx = document.getElementById('chart');
 
