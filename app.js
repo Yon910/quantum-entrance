@@ -100,3 +100,18 @@ window.stopTimer = function(){
   timerStart = null;
 
 };
+
+
+//グラフ表示
+const ctx = document.getElementById('chart');
+
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['Math', 'Physics', 'Chemistry'],
+    datasets: [{
+      label: 'Study Time (min)',
+      data: [30, 20, 10],
+    }]
+  }
+});
