@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Quantum Entrance</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<h1>Quantum Entrance</h1>
+
+<button onclick="login()">Google Login</button>
+
+<h2>Study Timer</h2>
+
+<select id="subject">
+
+<option>Math</option>
+<option>Physics</option>
+<option>Chemistry</option>
+
+</select>
+
+<div id="timer">0 min 0 sec</div>
+
+<button onclick="startTimer()">Start</button>
+<button onclick="stopTimer()">Stop</button>
+
+<h2>Study Stats</h2>
+
+<canvas id="chart"></canvas>
+
+<script type="module" src="app.js"></script>
+
+</body>
+
+</html>
