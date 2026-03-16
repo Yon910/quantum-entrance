@@ -35,9 +35,12 @@ window.login = async function(){
 
   try{
 
-    await signInWithPopup(auth, provider);
+    const result = await signInWithPopup(auth, provider);
 
-    alert("ログイン成功");
+    const user = result.user;
+
+    document.getElementById("welcome").innerText =
+    "今日も頑張りましょう " + user.displayName + " さん 🌸";
 
   }catch(error){
 
