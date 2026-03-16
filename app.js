@@ -104,6 +104,19 @@ window.stopTimer = function(){
 };
 
 
+//タイマーリセット
+window.resetTimer = function(){
+
+  clearInterval(interval);
+
+  timerRunning = false;
+
+  timerStart = null;
+
+  document.getElementById("timer").innerText = "0 min 0 sec";
+
+}
+
 //グラフ表示
 const ctx = document.getElementById('chart');
 
