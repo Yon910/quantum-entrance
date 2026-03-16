@@ -36,16 +36,18 @@ window.login = async function(){
   try{
 
     const result = await signInWithPopup(auth, provider);
-
     const user = result.user;
+
+    document.getElementById("loginBtn").style.display = "none";
 
     document.getElementById("welcome").innerText =
     "今日も頑張りましょう " + user.displayName + " さん 🌸";
 
+    generateTodayMessage();
+
   }catch(error){
 
     alert("ログイン失敗");
-
     console.error(error);
 
   }
