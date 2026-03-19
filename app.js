@@ -145,3 +145,71 @@ new Chart(ctx, {
     }]
   }
 });
+
+// 科目リスト
+let subjects = [];
+
+
+// 初期化
+window.onload = function(){
+
+loadSubjects();
+
+};
+
+
+// 科目を読み込む
+function loadSubjects(){
+
+const saved = localStorage.getItem("subjects");
+
+if(saved){
+subjects = JSON.parse(saved);
+}else{
+subjects = ["数学","電磁気","量子"];
+}
+
+updateSubjectUI();
+
+}
+
+
+// UI更新
+function updateSubjectUI(){
+
+const select = document.getElementById("subject");
+
+select.innerHTML = "";
+
+subjects.forEach(sub => {
+
+const option = document.createElement("option");
+
+option.value = sub;
+option.text = sub;
+
+select.appendChild(option);
+
+});
+
+}
+
+
+// 科目追加
+window.addSubject = function(){
+
+const input = document.getElementById("newSubject");
+
+const newSub = input.value.trim();
+
+if(newSub === "") return;
+
+subjects.push(newSub);
+
+localStorage.setItem("subjects", JSON.stringify(subjects));
+
+updateSubjectUI();
+
+input.value = "";
+
+};
